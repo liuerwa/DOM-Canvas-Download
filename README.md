@@ -5,6 +5,9 @@ H5页面，用户需要对Dom元素截图，比如：1、进入H5页面后做了
 
 ### 二、效果图
 
-H5名片页面：
+H5名片页面：(第一张：H5页面；第二张：生成的图片。)
 
-![](https://github.com/liuerwa/DOM-Canvas-Download/raw/master/images/1.png)
+<div style="display: fex;">
+<img src="https://github.com/liuerwa/DOM-Canvas-Download/raw/master/images/1.png" width="200">
+    <img src="https://github.com/liuerwa/DOM-Canvas-Download/raw/master/images/2.png" width="200">
+</div>
