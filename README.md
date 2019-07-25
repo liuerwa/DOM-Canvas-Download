@@ -5,7 +5,7 @@ H5页面，用户需要对Dom元素截图，比如：1、进入H5页面后做了
 
 ### 二、效果图
 
-H5名片页面：(第一张：H5页面；第二张：生成的图片。)
+**H5名片页面：**(第一张：H5页面；第二张：生成的图片。)
 
 <div style="display: fex;">
 <img src="https://github.com/liuerwa/DOM-Canvas-Download/raw/master/images/1.png" width="200">
@@ -14,11 +14,11 @@ H5名片页面：(第一张：H5页面；第二张：生成的图片。)
 
 ### 三、关键代码
 
-需要引入的js：html2canvas.js（此仓库js文件夹里面有这个js）
+**需要引入的js：**html2canvas.js（此仓库js文件夹里面有这个js）
 
 html对应的具体css请看此仓库css文件夹
 
-需要生成的Dom节点：
+**需要生成的Dom节点：**
 
 ```html
 <div id="app">
@@ -41,7 +41,7 @@ html对应的具体css请看此仓库css文件夹
 </div>
 ```
 
-用户点击按钮后页面的变化：
+**用户点击按钮后页面的变化：**
 
 ```html
 //存放生成的Img标签
@@ -52,7 +52,7 @@ html对应的具体css请看此仓库css文件夹
 <div class="tip">图片已生成，请长按屏幕保存！</div>
 ```
 
-生成图片操作：
+**生成图片操作：**
 
 ```javascript
 //生成图片
