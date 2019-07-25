@@ -11,4 +11,4 @@ H5名片页面：
 
 H5图片生成后：
 
-![1564024868893](C:\Users\zxliu\AppData\Roaming\Typora\typora-user-images\1564024868893.png)
+![](C:\Users\zxliu\Desktop\2.png)
