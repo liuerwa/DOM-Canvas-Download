@@ -1,0 +1,2 @@
+# DOM-Canvas-Download
+此文章主要是描述将Dom元素转为Canvas，并且将此Canvas转为Img图片，然后在移动端可以长按下载此图片
