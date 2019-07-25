@@ -9,8 +9,121 @@
 </head>
 <body>
 
+<div id="app">
+    <div class="title title1">
+        <span class="span1">姓名：</span>
+        <span class="span2">刘大王</span>
+    </div>
+    <div class="title">
+        <span class="span1">QQ：</span>
+        <span class="span2">826557140</span>
+    </div>
+    <div class="title">
+        <span class="span1">Email：</span>
+        <span class="span2">1996@liuerwa.cn</span>
+    </div>
+    <div class="title">
+        <span class="span1">Github：</span>
+        <span class="span2">https://github.com/liuerwa</span>
+    </div>
+</div>
 
+<div id="img"></div>
+
+<div class="btn" onclick="sava()">生成图片</div>
+
+<div class="tip">图片已生成，请长按屏幕保存！</div>
+
+<script src="js/html2canvas.js"></script>
 <script type="text/javascript">
+
+  //点击保存
+  function sava() {
+    let oContainer = document.querySelector("body");  //装canvas的容器
+
+    html2canvas(document.querySelector("#app"), {
+      allowTaint: true,
+      taintTest: true,
+      useCORS: true,
+    }).then(canvas => {
+      document.body.appendChild(canvas)
+      generateImage()
+      document.getElementsByClassName("btn")[0].style.display = 'none'
+      document.getElementsByClassName("tip")[0].style.display = 'block'
+    })
+  }
+
+  //生成图片
+  function generateImage() {
+
+    // 获取想要转换的dom节点
+    var dom = document.querySelector("#app");
+    var box = window.getComputedStyle(dom);
+
+    // dom节点计算后宽高
+    var width = parseValue(box.width);
+    var height = parseValue(box.height);
+
+    // 获取像素比
+    var scaleBy = getDpr();
+
+    // 创建自定义的canvas元素
+    var canvas = document.createElement('canvas');
+
+    // 设置canvas元素属性宽高为 DOM 节点宽高 * 像素比
+    /*canvas.width = width * scaleBy;
+    canvas.height = height * scaleBy;*/
+    canvas.width = width;
+    canvas.height = height;
+    console.log(canvas.width)
+    console.log(canvas.height)
+
+    // 设置canvas css 宽高为DOM节点宽高
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+
+    // 获取画笔
+    var context = canvas.getContext('2d');
+
+    // 将所有绘制内容放大像素比倍
+    context.scale(scaleBy, scaleBy);
+
+    // 设置需要生成的图片的大小，不限于可视区域（即可保存长图）
+    /*var w = document.getElementById('app').style.width;
+    var h = document.getElementById('app').style.height;*/
+    var w = width;
+    var h = height;
+    console.log(w)
+    console.log(h)
+
+    html2canvas(dom, {
+      allowTaint: true,
+      width: w,
+      height: h,
+      useCORS: true
+    }).then(function (canvas) {
+      // 将canvas转换成图片渲染到页面上
+      var url = canvas.toDataURL('image/png');// base64数据
+      var image = new Image();
+      image.src = url;
+      image.width = w;
+      image.height = h;
+      document.getElementById('img').appendChild(image);
+    });
+  }
+
+  //根据 window.devicePixelRatio 获取像素比
+  function getDpr () {
+    if (window.devicePixelRatio && window.devicePixelRatio > 1) {
+      return window.devicePixelRatio;
+    }
+    return 1;
+  }
+
+  //将传入值转为整数
+  function parseValue (value) {
+    return parseInt(value, 10);
+  }
 
 </script>
 </body>
