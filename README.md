@@ -7,8 +7,4 @@ H5页面，用户需要对Dom元素截图，比如：1、进入H5页面后做了
 
 H5名片页面：
 
-![1564024800787](C:\Users\zxliu\AppData\Roaming\Typora\typora-user-images\1564024800787.png)
-
-H5图片生成后：
-
-![](C:\Users\zxliu\Desktop\2.png)
+![](https://github.com/liuerwa/DOM-Canvas-Download/raw/master/images/1.png)
