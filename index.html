@@ -30,28 +30,12 @@
 
 <div id="img"></div>
 
-<div class="btn" onclick="sava()">生成图片</div>
+<div class="btn" onclick="generateImage()">生成图片</div>
 
 <div class="tip">图片已生成，请长按屏幕保存！</div>
 
 <script src="js/html2canvas.js"></script>
 <script type="text/javascript">
-
-  //点击保存
-  function sava() {
-    let oContainer = document.querySelector("body");  //装canvas的容器
-
-    html2canvas(document.querySelector("#app"), {
-      allowTaint: true,
-      taintTest: true,
-      useCORS: true,
-    }).then(canvas => {
-      document.body.appendChild(canvas)
-      generateImage()
-      document.getElementsByClassName("btn")[0].style.display = 'none'
-      document.getElementsByClassName("tip")[0].style.display = 'block'
-    })
-  }
 
   //生成图片
   function generateImage() {
@@ -109,6 +93,8 @@
       image.width = w;
       image.height = h;
       document.getElementById('img').appendChild(image);
+      document.getElementsByClassName("btn")[0].style.display = 'none'
+      document.getElementsByClassName("tip")[0].style.display = 'block'
     });
   }
 
